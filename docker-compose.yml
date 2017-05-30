@@ -1,0 +1,13 @@
+version: "2.1"
+services:
+  db:
+    restart: always
+    image: postgres
+    ports:
+      - "5439:5432"
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: docker
+      POSTGRES_DB: dbname
+      TZ: Asia/Bangkok
+

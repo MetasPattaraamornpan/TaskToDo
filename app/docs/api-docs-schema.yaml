@@ -1,0 +1,224 @@
+
+swagger: "2.0"
+info:
+  description: "API reference for Task to do Project"
+  version: "1.0.0"
+  title: "Task to do"
+host: "localhost:5000"#54.255.246.88
+basePath: "/api/v1/taskapi"
+tags:
+- name: "Task to do"
+  description: ""
+schemes:
+    - "http"
+paths:
+  /task/{task_id}:
+    get:
+      summary: "View a single task in the list"
+      description: "API search a task by task id."
+      tags:
+      - "Task to do"
+      parameters:
+      - name: "task_id"
+        in: "path"
+        description: "ID of task to return"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/task response"
+        400:
+          description: "Bad request"
+        404:
+          description: "No data returned from the query."
+        500:
+          description: "Internal error."
+    delete:
+      summary: "Delete existing task"
+      description: "API delete existing task in the list and return a task which deleted."
+      tags:
+      - "Task to do"
+      parameters:
+      - name: "task_id"
+        in: "path"
+        description: "ID of task to delete"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/task response"
+        400:
+          description: "Bad request"
+        404:
+          description: "No data returned from the query."
+        500:
+          description: "Internal error."
+  /task:
+    post:
+      summary: "Add a task to the list"
+      description: "API create task in the list and return task which created."
+      tags:
+      - "Task to do"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Request object that needs to be added to the list"
+        required: false
+        schema:
+          $ref: "#/definitions/create task request"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/create task response"
+        400:
+          description: "Bad request"
+        500:
+          description: "Internal error."
+    put:
+      summary: "Edit existing task"
+      description: "API update existing task in the list and return a task which edited."
+      tags:
+      - "Task to do"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Request object that needs to be edit task"
+        required: false
+        schema:
+          $ref: "#/definitions/edit task request"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/task response"
+        400:
+          description: "Bad request"
+        404:
+          description: "No data returned from the query."
+        500:
+          description: "Internal error."
+  /tasks:
+    get:
+      summary: "Add all tasks in the list"
+      description: "API search all tasks in the list."
+      tags:
+      - "Task to do"
+      parameters:
+      - name: "status"
+        in: "query"
+        description: "Request object that needs to be added to the list"
+        required: false
+        type: "string"
+        items:
+          type: "string"
+          enum:
+          - "pending"
+          - "done"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/task response"
+        400:
+          description: "Bad request"
+        500:
+          description: "Internal error."
+  /task/status:
+    put:
+      summary: "Edit existing task status"
+      description: "API update existing task status in the list and return a task which edited."
+      tags:
+      - "Task to do"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Request object that needs to be edit task status"
+        required: false
+        schema:
+          $ref: "#/definitions/edit task status request"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/task response"
+        400:
+          description: "Bad request"
+        404:
+          description: "No data returned from the query."
+        500:
+          description: "Internal error."
+definitions:
+  task response:
+    type: "object"
+    properties:
+      task_id:
+        type: "integer"
+      subject:
+        type: "string"
+      detail:
+        type: "string"
+      status:
+        type: "string"
+        enum:
+        - "pending"
+        - "done"
+  edit task request:
+    type: "object"
+    required:
+    - "task_id"
+    properties:
+      task_id:
+        type: "integer"
+      subject:
+        type: "string"
+      detail:
+        type: "string"
+  edit task status request:
+    type: "object"
+    required:
+    - "task_id"
+    - "status"
+    properties:
+      task_id:
+        type: "integer"
+      status:
+        type: "string"
+        enum:
+        - "pending"
+        - "done"
+  create task request:
+    type: "object"
+    properties:
+      subject:
+        type: "string"
+        default: "No Subject"
+      detail:
+        type: "string"
+      status:
+        type: "string"
+        enum:
+        - "pending"
+        - "done"
+  create task response:
+    type: "object"
+    properties:
+      task_id:
+        type: "integer"
+      subject:
+        type: "string"
+      detail:
+        type: "string"
+      status:
+        type: "string"
+        enum:
+        - "pending"
+        - "done"

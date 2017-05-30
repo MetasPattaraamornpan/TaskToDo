@@ -1,0 +1,47 @@
+html
+{
+    box-sizing: border-box;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+*,
+*:before,
+*:after
+{
+    box-sizing: inherit;
+}
+body {
+  margin:0;
+}
+.document-page .topbar {
+  display: none;
+}
+.document-page #header{
+  background-color: #000;
+}
+.document-page #header .swagger-ui-wrap {
+  padding: 20px;
+}
+.document-page #header a#logo {
+    font-size: 1.5em;
+    text-decoration: none;
+    background: transparent url("/public/logo_bu/logo_T1C.png") no-repeat left center;
+    background-size: auto 100%;
+    padding: 20px 0 20px 75px;
+    color: white;
+}
+#header .line {
+  height: 1px;
+  display: block;
+}
+#header .line.a {
+  background-color: rgba(254, 254, 254, 0.3);
+}
+#header .line.b {
+    background-color: rgba(254, 254, 254, 0.6);
+    margin-top: 3px;
+}
+#header .line.c {
+    background-color: #fff;
+    margin-top: 3px;
+}

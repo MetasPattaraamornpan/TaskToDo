@@ -1,6 +1,5 @@
 'use strict'
 
-const debug     = require('debug')('payment-interface:test:integration:getUser')
 const fs        = require('fs')
 const promise   = require('bluebird')
 const chai      = require('chai')

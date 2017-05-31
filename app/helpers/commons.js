@@ -100,10 +100,10 @@ function pgModelErrorResponse(err) {
 function handleError(res , errData){
   console.log('handleError', errData);
   let err_msg = errData.err || errData.error || errData
-  if(errData.status === 400)return res.status(400).send({"error" : err_msg || "Bad Request"});
-  else if(errData.status === 404)return res.status(404).send({"error" : err_msg || "Not found"});
-  else if(errData.status === 503)return res.status(503).send({"error" : err_msg || "Internal Server Error"});
-  else return res.status(errData.status || 500).send({"error" : err_msg || errData});
+  if(errData.status === 400)return res.status(400).send({status: 400,"error" : err_msg || "Bad Request"});
+  else if(errData.status === 404)return res.status(404).send({status: 404,"error" : err_msg || "Not found"});
+  else if(errData.status === 503)return res.status(503).send({status: 503,"error" : err_msg || "Internal Server Error"});
+  else return res.status(errData.status || 500).send({status: errData.status || 500,"error" : err_msg || errData});
 }
 
 function handleResponse(res, resData){

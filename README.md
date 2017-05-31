@@ -5,6 +5,7 @@
 ```bash
 # API URL
 http://54.255.246.88/api/v1/taskapi
+
 # API Doc
 http://54.255.246.88/api/v1/taskapi/docs
 ```
@@ -19,13 +20,12 @@ https://github.com/MetasPattaraamornpan/TaskToDo.git
 ## Run locally
 
 ```bash
+# install lib
+npm install
+
 # run the app
 npm start
-```
 
-## Test locally
-
-```bash
 # test the app
 npm test
 ```

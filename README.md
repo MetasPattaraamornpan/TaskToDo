@@ -10,16 +10,12 @@ http://54.255.246.88/api/v1/taskapi
 http://54.255.246.88/docs
 ```
 
-## Install locally
-
-```bash
-# clone this repository
-https://github.com/MetasPattaraamornpan/TaskToDo.git
-```
-
 ## Run locally
 
 ```bash
+# clone this repository
+git clone https://github.com/MetasPattaraamornpan/TaskToDo.git
+
 # install lib
 npm install
 

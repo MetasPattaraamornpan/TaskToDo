@@ -7,7 +7,7 @@
 http://54.255.246.88/api/v1/taskapi
 
 # API Doc
-http://54.255.246.88/api/v1/taskapi/docs
+http://54.255.246.88/docs
 ```
 
 ## Install locally

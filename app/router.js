@@ -25,7 +25,7 @@ module.exports = function(app) {
     
     // Not found route
     app.use(function(req, res, next) {
-        throw {status : 404, err : `"${req.url}" not found`}
+        throw {status : 404, error : `"${req.url}" not found`}
     })
 
     // Error handle
@@ -39,7 +39,7 @@ module.exports = function(app) {
         // reply error
         if (errObj.status) res.status(errObj.status)
 
-        res.send({status: errObj.status,message: errObj.message })
+        res.send({status: errObj.status, error: errObj.message })
         return;
     })
 }

@@ -57,7 +57,7 @@ function start() {
     app.use(useragent.express())
     // for swagger docs
     app.use(swagger.init(app, {
-        basePath: 'localhost:5000',
+        basePath: 'http://54.255.246.88',
         swaggerURL: '/docs',
         swaggerUI: './app/docs'
     }));

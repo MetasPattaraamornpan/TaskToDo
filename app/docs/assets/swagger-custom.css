@@ -22,13 +22,12 @@ body {
 .document-page #header .swagger-ui-wrap {
   padding: 20px;
 }
-.document-page #header a#logo {
+.document-page #header{
     font-size: 1.5em;
     text-decoration: none;
-    background: transparent url("/public/logo_bu/logo_T1C.png") no-repeat left center;
-    background-size: auto 100%;
     padding: 20px 0 20px 75px;
     color: white;
+    display: none;
 }
 #header .line {
   height: 1px;

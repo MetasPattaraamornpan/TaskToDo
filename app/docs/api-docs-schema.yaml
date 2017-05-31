@@ -4,7 +4,7 @@ info:
   description: "API reference for Task to do Project"
   version: "1.0.0"
   title: "Task to do"
-host: "localhost:5000"#54.255.246.88
+host: "54.255.246.88"
 basePath: "/api/v1/taskapi"
 tags:
 - name: "Task to do"

@@ -1,6 +1,6 @@
 # Task API
 
-## CLOUD AWS
+## Cloud AWS
 
 ```bash
 # API URL
